@@ -1,0 +1,32 @@
+
+
+<h2 class="mt-5">Global Data</h2>
+<p-tabView>
+  <p-tabPanel header="Counties per State">
+    <app-counties-per-state [counties]="data.counties"></app-counties-per-state>
+  </p-tabPanel>
+  <p-tabPanel header="Counties by Starting Letter">
+    <app-chart-starting-letter [itemsList]="data.countiesList" [title]="'Counties by starting letter'"></app-chart-starting-letter>
+  </p-tabPanel>
+</p-tabView>
+
+<hr class="my-4" />
+<div class="row mt-5">
+    <div class="col-6">
+        <h2>{{selectedStateObj.label}} Info</h2>
+    </div>
+    <div class="col-6"> 
+        <div class="d-flex align-items-center justify-content-end">
+            <h4 class="mr-3">CHANGE STATE:</h4>
+            <p-dropdown class="float-right" [options]="states" [(ngModel)]="selectedState" [filter]="true" (onChange)="stateChange($event)"></p-dropdown>
+        </div>
+    </div>
+</div>
+<p-tabView>
+    <p-tabPanel header="Cities by Population">
+        <app-cities-by-pop [cities]="data.cities"></app-cities-by-pop>
+    </p-tabPanel>
+    <p-tabPanel header="Cities by Starting Letter">
+        <app-chart-starting-letter [itemsList]="data.citiesList" [title]="'Cities by starting letter'"></app-chart-starting-letter>
+    </p-tabPanel>
+  </p-tabView> 

@@ -1,0 +1,9 @@
+<div class="password-container">
+    <form [formGroup]="form" (ngSubmit)="login()">
+        <label for="password">Secret Code</label>
+        <input type="password" formControlName="password" id="password">
+        <div *ngIf="!form.controls['password'].valid && form.controls['password'].touched">
+            <small>Did you forget the secret code again?</small>
+        </div>
+    </form>
+</div>

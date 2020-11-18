@@ -1,0 +1,24 @@
+.password-container {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form {
+        display: flex;
+        flex-flow: column;
+        label {
+            font-size: 24px;
+        }
+        
+        input, input:active, input:focus, input:hover {
+            background: #111;
+            border: 2px solid #0F0;
+            line-height: 30px;
+            font-size: 30px;
+            color: #0F0;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
