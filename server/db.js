@@ -10,11 +10,6 @@ const init = () =>
     db = client.db(dbName)
   })
 
-// const insertItem = (item) => {
-//   const collection = db.collection('items')
-//   return collection.insertOne(item)
-// }
-
 const getCovidTestingSites = () => {
   const collection = db.collection('covid_testing_sites')
   return collection.find({}).toArray()
@@ -47,9 +42,5 @@ const getCountiesByState = () => {
     }
   ]).toArray();
 }
-// const updateQuantity = (id, quantity) => {
-//   const collection = db.collection('items')
-//   return collection.updateOne({ _id: ObjectId(id) }, { $inc: { quantity } })
-// }
 
 module.exports = { init, getCovidTestingSites, getCitiesByState, getCountiesByState }
